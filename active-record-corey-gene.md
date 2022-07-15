@@ -1,6 +1,6 @@
 <!-- Challenge: Rolodex
 As a developer, I have been tasked with creating a database model that will be used in a rolodex application. I want to ensure that the database behaves as expected and the necessary actions can be performed on the database instances.
-
+-->
 Set Up
 
 Create a new Rails app named 'rolodex_challenge'.
@@ -60,7 +60,7 @@ Update all the family members with the same last_name as you, to have the same p
 # same_last = Person.where(last_name:"arnold")
 # same_last.update(phone:"000-234-5678")
 
-Remove all family members that do not have your last_name. -->
 
-# last = Person.where.not(last_name:"arnold")
-# last.destroy 2
+Remove all family members that do not have your last_name. 
+# filter_last = Person.where.not(last_name:"arnold")
+# filter_last.destroy 2
