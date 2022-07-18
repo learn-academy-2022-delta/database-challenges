@@ -1,0 +1,42 @@
+Challenges
+Create three owners and save them in the database
+
+Owner.create(name:"corey", address:"123 random way")
+Owner.create(name:"ahmed", address:"456 other way")
+Owner.create(name:"random", address:"000 random st")
+
+
+Create a credit card in the database for each owner
+
+corey.cards.create(number:"1234", expiration:"12/23")
+ahmed.cards.create(number:"56789",expiration:"1/25")
+random.cards.create(number:"09876", expiration:"02/27")
+
+
+
+Add two more credit cards to one of the owners
+
+corey.cards.create(number:"5678", expiration:"2/26")
+ corey.cards.create(number:"78906", expiration:"08/27")
+
+
+
+
+Stretch Challenge
+Add a credit limit to each card
+
+rails generate  migration add_column_to_card
+class AddColumnToCard < ActiveRecord::Migration[7.0]
+    def change
+      add_column :cards, :credit_limit, :integer
+    end
+  end
+rails db:migrate
+
+corey.cards.update(credit_limit:500
+ahmed.cards.update(credit_limit:1000)
+random.cards.update(credit_limit:200)
+
+
+Find the total credit extended to the owner with 
+multiple credit cards
