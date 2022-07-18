@@ -25,6 +25,18 @@ corey.cards.create(number:"5678", expiration:"2/26")
 Stretch Challenge
 Add a credit limit to each card
 
-Find the total credit extended to the owner with 
+rails generate  migration add_column_to_card
+class AddColumnToCard < ActiveRecord::Migration[7.0]
+    def change
+      add_column :cards, :credit_limit, :integer
+    end
+  end
+rails db:migrate
 
+corey.cards.update(credit_limit:500
+ahmed.cards.update(credit_limit:1000)
+random.cards.update(credit_limit:200)
+
+
+Find the total credit extended to the owner with 
 multiple credit cards
