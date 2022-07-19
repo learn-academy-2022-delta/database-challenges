@@ -2,7 +2,7 @@
 Create a Rails application called company_contacts. The app will have a PostgreSQL database.
 Generate a model called Account that has a username, a password, and an email.
 All stories should have accompanying model specs.
-Developer Stories
+Developer Stories.
 
 As a developer, I need username, password, and email to be required.
 As a developer, I need every username to be at least 5 characters long.
