@@ -1,0 +1,138 @@
+Routes, Views, Controllers
+
+As a user, I can visit a custom landing page at localhost:3000.
+
+- routes.rb
+get '/landing' => 'main#home'
+  root to:'main#home'
+
+- main_controller.rb
+    def landing 
+        
+    end
+
+- home.html.erb
+<h1>Welcome to Our Page</h1>
+
+
+As a user, I can see the names of my team members as hyperlinks on the landing page.
+
+-home.html.erb
+<%=link_to 'Corey', '/corey' %>
+
+<%=link_to 'Venessa', '/venessa' %>
+
+As a user, I can click on each team member's name and be taken to a page that displays a list of that team member's top three things. (Could be top three restaurants, activities, books, video games, hiking locations, beaches, doughnut shoppes, movies, etc.)
+
+
+- main_controller.rb
+def corey 
+        @corey_likes = ['Burritos', 'Kickboxing', 'Swimming']
+    end
+
+    def venessa
+        @venessa_likes = ['item1', 'item2', 'item3']
+    end
+
+- routes.rb
+get '/corey' => 'main#corey'
+get '/venessa' => 'main#venessa'
+
+- corey.html.erb
+<h1>Corey</h1>
+
+<h3> What Corey Likes</h3>
+    <% @corey_likes.each do |value|%>
+        <h4> <%=value%><h4>
+    <%end%>
+
+- venessa.html.erb
+<h1>Venessa</h1>
+
+<h3> What Venessa Likes</h3>
+    <% @venessa_likes.each do |value|%>
+        <h4> <%=value%><h4>
+    <%end%>
+
+Params
+
+As a user, I can visit a page called cubed that takes a number as a param and displays that number cubed.
+
+- main_controller.rb
+ def cubed
+        @num = params[:num]
+        @squared_num = @num.to_i * @num.to_i * @num.to_i
+    end
+
+- routes.rb 
+get '/cubed/:num' => 'main#cubed'
+
+- cubed.html.erb
+<h1><%=@squared_num%></h1>
+
+As a user, I can visit a page called evenly that takes two numbers as params and displays whether or not the first number is evenly divisible by the second.
+
+- main_controller.rb
+def evenly
+        @num1 = params[:num1]
+        @num2 = params[:num2]
+
+        if @num1.to_i % @num2.to_i == 0 
+            @result = " is evenly divisible "
+
+        else
+            @result = " is not evenly divisible "
+        end
+
+    end
+
+- routes.rb
+get '/evenly/:num1/:num2' => 'main#evenly'
+
+- evenly.html.erb
+<h1><%=@result%></h1>
+
+As a user, I can visit a page called palindrome that takes a string as a param and displays whether it is a palindrome (the same word forward and backward).
+
+- main_controller.rb
+def palindrome
+        @str = params[:str]
+
+        if @str.downcase == @str.reverse
+            @result = "is a palindrome"
+
+        else
+            @result = "is not a palindrome"
+
+        end
+    end
+
+- routes.rb
+get '/palindrome/:str' => 'main#palindrome'
+
+- palindrome.html.erb
+<h1><%=@result%></h1>
+
+
+
+As a user, I can visit a page called madlib that takes params of a noun, verb, adjective, adverb, and displays a short silly story.
+
+- main_controller.rb
+ def madlib
+        @noun = params[:noun]
+        @verb = params[:verb]
+        @adjective = params[:adjective]
+        @adverb = params[:adverb]
+
+
+    end
+
+- routes.rb
+get '/madlib/:noun/:verb/:adjective/:adverb' => 'main#madlib'
+
+- madlib.html.erb
+<p>
+    Two <%=@noun%> are at a bar. One is a server the others foreign key is a dancer. Query <%=@verb%> in challenges <%=@noun%> to a <%=@adverb%> dance battle in order for query to join the <%=@adjective%> table.
+
+
+</p>
