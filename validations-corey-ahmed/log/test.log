@@ -1,0 +1,686 @@
+  [1m[35m (159.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "company_contacts_test"[0m
+  [1m[35m (897.3ms)[0m  [1m[35mCREATE DATABASE "company_contacts_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts" CASCADE[0m
+  [1m[35m (40.4ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220718214504)[0m
+  [1m[35m (32.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (18.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-07-18 21:52:58.776051"], ["updated_at", "2022-07-18 21:52:58.776051"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "22b807091a38e09b18c78c02fe4eb03d93928a4d"], ["created_at", "2022-07-18 21:52:58.807743"], ["updated_at", "2022-07-18 21:52:58.807743"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (19.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (7.3ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", nil], ["password", "[FILTERED]"], ["email", nil], ["created_at", "2022-07-18 21:52:59.074327"], ["updated_at", "2022-07-18 21:52:59.074327"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.9ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", nil], ["password", "[FILTERED]"], ["email", nil], ["created_at", "2022-07-18 21:53:55.190685"], ["updated_at", "2022-07-18 21:53:55.190685"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (11.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (1.6ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", nil], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 21:55:48.862396"], ["updated_at", "2022-07-18 21:55:48.862396"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAccount Create (0.8ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", nil], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 21:56:34.239895"], ["updated_at", "2022-07-18 21:56:34.239895"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (21.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (26.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Create (1.2ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", nil], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 21:58:56.956471"], ["updated_at", "2022-07-18 21:58:56.956471"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (20.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (25.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Create (1.3ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", nil], ["password", "[FILTERED]"], ["email", nil], ["created_at", "2022-07-18 22:00:08.004918"], ["updated_at", "2022-07-18 22:00:08.004918"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (21.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "h"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:11:50.114857"], ["updated_at", "2022-07-18 22:11:50.114857"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (26.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (17.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:19:55.665801"], ["updated_at", "2022-07-18 22:19:55.665801"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:19:55.668935"], ["updated_at", "2022-07-18 22:19:55.668935"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (23.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (27.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (25.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:21:25.674286"], ["updated_at", "2022-07-18 22:21:25.674286"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (25.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (20.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:22:42.174413"], ["updated_at", "2022-07-18 22:22:42.174413"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Create (25.2ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "h12345"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:22:42.185489"], ["updated_at", "2022-07-18 22:22:42.185489"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (20.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (27.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (22.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:23:10.576277"], ["updated_at", "2022-07-18 22:23:10.576277"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (12.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Create (1.3ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:24:33.420742"], ["updated_at", "2022-07-18 22:24:33.420742"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (25.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Create (1.6ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:24:33.462805"], ["updated_at", "2022-07-18 22:24:33.462805"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:24:33.470667"], ["updated_at", "2022-07-18 22:24:33.470667"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (20.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:25:01.419938"], ["updated_at", "2022-07-18 22:25:01.419938"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:25:01.433918"], ["updated_at", "2022-07-18 22:25:01.433918"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (25.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (239.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "company_contacts_test"[0m
+  [1m[35m (889.1ms)[0m  [1m[35mCREATE DATABASE "company_contacts_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts" CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "addresses" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" bigserial primary key, "street_number" integer, "street_name" character varying, "city" character varying, "state" character varying, "zip" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220718222911)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220718214504);
+
+[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (17.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-07-18 22:40:58.615536"], ["updated_at", "2022-07-18 22:40:58.615536"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "9b8e9afef0f28b1eac2a6eb7ed6a64b1c0e53a59"], ["created_at", "2022-07-18 22:40:58.645674"], ["updated_at", "2022-07-18 22:40:58.645674"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (23.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.9ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:40:58.999533"], ["updated_at", "2022-07-18 22:40:58.999533"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (24.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (25.7ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:40:59.057659"], ["updated_at", "2022-07-18 22:40:59.057659"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAddress Create (26.0ms)[0m  [1m[32mINSERT INTO "addresses" ("street_number", "street_name", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["street_number", nil], ["street_name", nil], ["city", nil], ["state", nil], ["zip", nil], ["created_at", "2022-07-18 22:40:59.107604"], ["updated_at", "2022-07-18 22:40:59.107604"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (21.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (23.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (9.8ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (18.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (24.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (17.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAddress Create (1.3ms)[0m  [1m[32mINSERT INTO "addresses" ("street_number", "street_name", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["street_number", nil], ["street_name", nil], ["city", nil], ["state", nil], ["zip", nil], ["created_at", "2022-07-18 22:46:09.599270"], ["updated_at", "2022-07-18 22:46:09.599270"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (33.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (16.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:48:32.443512"], ["updated_at", "2022-07-18 22:48:32.443512"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:48:32.457650"], ["updated_at", "2022-07-18 22:48:32.457650"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (25.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.7ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:50:06.244115"], ["updated_at", "2022-07-18 22:50:06.244115"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (25.8ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:50:06.286589"], ["updated_at", "2022-07-18 22:50:06.286589"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (12.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (205.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "company_contacts_test"[0m
+  [1m[35m (840.0ms)[0m  [1m[35mCREATE DATABASE "company_contacts_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts" CASCADE[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "user_name" character varying, "password" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "addresses" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" bigserial primary key, "street_number" integer, "street_name" character varying, "city" character varying, "state" character varying, "zip" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "account_id" integer)[0m
+  [1m[35m (32.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220718225401)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220718214504),
+(20220718222911);
+
+[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (23.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-07-18 22:57:45.013096"], ["updated_at", "2022-07-18 22:57:45.013096"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "5e31ce81104a9c35bc835826f2fd1d1a4cf1738c"], ["created_at", "2022-07-18 22:57:45.046650"], ["updated_at", "2022-07-18 22:57:45.046650"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (27.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (37.6ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.9ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:57:57.805001"], ["updated_at", "2022-07-18 22:57:57.805001"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (24.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (1.5ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 22:57:57.854827"], ["updated_at", "2022-07-18 22:57:57.854827"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (22.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 23:08:50.471277"], ["updated_at", "2022-07-18 23:08:50.471277"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 23:08:50.482149"], ["updated_at", "2022-07-18 23:08:50.482149"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (22.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (23.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (26.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (23.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (26.6ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (33.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (26.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (23.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "corey15"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 23:19:03.287152"], ["updated_at", "2022-07-18 23:19:03.287152"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "h12345"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "ahmed22"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (26.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("user_name", "password", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_name", "ahmed22"], ["password", "[FILTERED]"], ["email", "random@gmail.com"], ["created_at", "2022-07-18 23:19:03.333589"], ["updated_at", "2022-07-18 23:19:03.333589"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAccount Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."user_name" = $1 LIMIT $2[0m  [["user_name", "corey15"], ["LIMIT", 1]]
+  [1m[36mAccount Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "accounts" WHERE "accounts"."password" = $1 LIMIT $2[0m  [["password", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[31mROLLBACK[0m
